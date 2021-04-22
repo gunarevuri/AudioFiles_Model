@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'songs'
 ]
 
 MIDDLEWARE = [
@@ -74,18 +76,18 @@ WSGI_APPLICATION = 'filed.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+# Password validation
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'playlist',
+        'USER': 'gunarevuri',
+        'PASSWORD':'admin@123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     },
     'auth': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'songs': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'gunarevuri',
-        ''
     }
 }
 
